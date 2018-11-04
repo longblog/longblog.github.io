@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://git@github.com.github.com/sitemap.xml 
