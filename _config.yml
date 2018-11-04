@@ -1,72 +1,70 @@
-#-------------------------------
-# General Site Settings
+# Site settings
+title: Lorem Ipsum - Web Developer
+description: "A blog about lorem ipsum ..."
+baseurl: "/space-jekyll-template" # for test: remove string '/space-jekyll-template' to ''
+url: "http://victorvoid.github.io/space-jekyll-template/" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https://yourusername.githu.io'
 
-title: Galada Theme | Theme for Jekyll
-description: Galada is an easy and simple theme for Jekyll. Dark colors, give it a special exquisite look. A careful approach to design and features make it an ideal solution for a personal blog. # this means to ignore newlines until "baseurl:"
-baseurl: "/galada" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# User settings
+username: lorem ipsum
+user_title: Lorem Ipsum - FrontEnd
+email: lorem.lorem@ipsum.com
+twitter_username: loremipsum
+github_username:  loremipsum
+gplus_username:  loremipsum
+linkedin_public_url: loremipsum # Example: For public profile 'www.linkedin.com/in/john-smith', 'john-smith' is your linkedin_public_url
+disqus_username: loremipsum
+profile_picture: https://68.media.tumblr.com/93f384858e9273d5b980b418e2f2f4d5/tumblr_o5i2aybLJG1uapsfmo2_250.png
 
-
-#-------------------------------
-# About Section
-author-name:   Natali Anderson
-author-avatar: 09.jpg
-
-
-#-------------------------------
-# Contact links
-facebook:  https://facebook.com/ # Add your Facebook handle
-twitter:   https://twitter.com/ # Add your Facebook handle
-instagram: https://www.instagram.com/ # Add your Facebook handle
-pinterest: https://www.pinterest.com/ # Add your Facebook handle
-
-
-#-------------------------------
-# Comment Section (Disqus)
-disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
-
-
-#-------------------------------
-# Instagram Feed
-instafeed: true # To enable the instafeed, use the value true. To turn off use the value false.
-
-
-#-------------------------------
-# Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1.
-
-
-#-------------------------------
-# Newsletter
-mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
-
-
-#-------------------------------
 # Build settings
 markdown: kramdown
-permalink: ':title/'
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+highlighter: rouge
+permalink: /:title/
 
-paginate: 7
-paginate_path: "/page/:num"
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
 
-include:
-  - _pages
+# Links to include in menu navigation
+links:
+  section_1:
+    - title: home
+      url: /
+      key_trigger: 1
+    - title: my posts
+      url: /posts
+      key_trigger: 2
+    - title: series
+      url: /series
+      key_trigger: 3
+    - title: tags
+      url: /tags
+      key_trigger: 4
+    - title: about me
+      url: /about
+      key_trigger: 5
+  section_2:
+    - title: github
+      url: http://www.github.com/victorvoid
+      new_tab: true
+      key_trigger: g
+    - title: twitter
+      url: http://www.twitter.com/victorvoid
+      key_trigger: t
+    - title: search
+      url: ""
+      key_trigger: s #WARNING: search only works with "s"
 
-sass:
-  sass_dir: _sass
-  style: compressed
+# projects in header index
+projects:
+  - name: fluany
+    url: https://github.com/fluany/fluany
+  - name: vim-frontend
+    url: https://github.com/victorvoid/vim-frontend
+  - name: generator-capybara
+    url: https://github.com/victorvoid/generator-capybara 
 
-
-#-------------------------------
-# Exclude from processing.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
