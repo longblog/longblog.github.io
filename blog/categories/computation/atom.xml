@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: computation | Blog kỹ thuật máy tính]]></title>
+  <link href="http://git@github.com.github.com/blog/categories/computation/atom.xml" rel="self"/>
+  <link href="http://git@github.com.github.com/"/>
+  <updated>2015-05-07T01:18:39+09:00</updated>
+  <id>http://git@github.com.github.com/</id>
+  <author>
+    <name><![CDATA[kỹ thuật máy tính]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cách tính căn bậc 2]]></title>
+    <link href="http://git@github.com.github.com/blog/2013/06/16/cach-tinh-can-bac-hai/"/>
+    <updated>2013-06-16T21:23:00+09:00</updated>
+    <id>http://git@github.com.github.com/blog/2013/06/16/cach-tinh-can-bac-hai</id>
+    <content type="html"><![CDATA[<h2 id="câu-chuyện">Câu chuyện</h2>
+<p>Trong một buổi phỏng vấn kỹ thuật tại công ty XXX, một lập trình viên “lão thành” chịu trách nhiệm phỏng vấn Tèo hỏi Tèo một câu:</p>
+<blockquote>
+<p>“Hãy viết chương trình C tính căn bậc 2 của số nguyên x”</p>
+</blockquote>
+<p>Tèo cười thầm và tự nghĩ “Công ty công nghệ hàng đầu Việt Nam gì mà hỏi một câu dễ vậy. Nó đâu phải là thằng mới học lập trình!”</p>
+<p>Và Tèo trong chớp mắt đưa ra ngay lời giải với đoạn code như dưới đây:</p>
+<p>{% codeblock sqrt.c %} #include <stdio.h> #include <math.h></p>
+<p>int main() { int x; printf(“Input x:”); scanf(“%d”, &amp;x); printf(“Sqrt of %d = %f”, x, sqrt(x)); } {% endcodeblock %}</p>
+<p>{% highlight bash %} Input x: 3 Sqrt of 3 = 1.732051 {% endhighlight %}</p>
+<p>Chương trình compiled không có 1 lỗi và kết quả đúng.</p>
+<p>Tèo tự tin. Không ngờ công ty XXX nổi tiếng mà lại hỏi một câu ngớ ngẩn đến thế! Nó nghĩ.</p>
+<p>Lập trình viên kinh nghiệm nhìn code của Tèo và khen: “Cậu có căn bản!”. Tèo sung sướng và nghĩ rằng mình đã chắc chắn 100% được nhận vào làm việc. Đúng lúc đấy vị lập trình viên già kia hỏi tiếp:</p>
+<blockquote>
+<p>“Cậu hãy trả lời lại câu hỏi trên, lần này không dùng hàm sqrt của thư viện C”</p>
+</blockquote>
+<p>“Chà câu hỏi có vẻ khó hơn. Tèo bắt đầu suy nghĩ. Sau một lúc cậu bắt đầu gãi đầu gãi tai. Làm thế nào để tính bây giờ? Tèo nghĩ mãi nghĩ mãi…”</p>
+<p>Hết giờ! Người phỏng vấn Tèo nhận xét: “Cậu vẫn còn phải học nhiều”. Tèo buồn bã vì biết rằng mình đã trượt. Tuy vậy, nó nghĩ dù trượt nhưng nó nên ra về biết thêm 1 điều gì mới, nó liền hỏi người phỏng vấn:</p>
+<p>“Làm thế nào tôi có thể tính được căn bậc hai? Phải chăng tôi cần một thuật toán phức tạp với rất nhiều dòng mã?”.</p>
+<p>Vị lập trình viên “lão thành” cười và trả lời: “Máy tính làm phép tính rất nhanh, thay vì có câu trả lời tuyệt đối, ta có thể bắt nó đoán câu trả lời cho ta!”. Nhìn mặt Tèo lớ ngớ, vị kỹ sư già vừa cười vừa từ tốn giải thích tiếp.</p>
+<p>Căn bậc hai của y được định nghĩa là số x sao cho: x^2 == y hay x = y / x. Nếu x là kết quả thì x = y / x, còn nếu không kết quả sẽ phải là 1 số x’ nằm trong khoảng x và y/x. Ta không biết số này là bao nhiêu, nhưng ta có 1 cách để đoán lấy 1 số trong khoảng này đó là trung bình cộng!</p>
+<p>Tèo gật gù.</p>
+<p>Ví dụ: cần tính căn bậc 2 của 3. Ta đoán kết quả là 1.0. Kết quả này không đúng rồi, nên đáp số sẽ nằm trong khoảng 1.0 và 3/1.0 = 2.0. Lấy trung bình cộng lần 1 ta có kết quả là 1.5. Lại thử với 1.5 và 3/1.5 = 2.0 ta có kết quả là 1.75! Sau nhiều lần lặp ta sẽ có kết quả tiệm cận với đáp số!</p>
+<p>Tèo sáng mắt! Vị kỹ sư cười và tiếp tục.</p>
+<p>Vì ta không có kết quả chính xác, nên số lần lặp sẽ là vô hạn. Tuy vậy tại mỗi bước lặp, ta sẽ thử xem kết quả đủ chính xác theo yêu cầu chưa. Ví dụ nếu đáp số hiện tại là x = 1.73, x^2 = 2.99 và ta chỉ cần độ chính xác đến 2 số sau dấu phẩy, thì 1.73 là đáp án phù hợp. Do vậy ta sẽ có chương trình tính căn bậc 2 như sau:</p>
+<p>{% codeblock sqrt.c %} #include <stdio.h> #include <math.h></p>
+<h1 id="define-precise-0.0001f">define PRECISE 0.0001f</h1>
+<p>double mysqrt(int x) { double guess = 1.0f; while (fabs(guess*guess - x)/x &gt;= PRECISE) guess = (x/guess - guess) / 2 + guess; return guess; }</p>
+<p>int main(void) { int x; printf(“Input x:”); scanf(“%d”, &amp;x); printf(“Sqrt of %d = %f”, x, mysqrt(x)); return 0; } {% endcodeblock %}</p>
+<p>{% highlight bash %} Input x: 3 Sqrt of 3 = 1.732051 {% endhighlight %}</p>
+<p>Và Tèo được khai sáng!</p>
+<h2 id="tham-khảo">Tham khảo</h2>
+<ol type="1">
+<li><a href="http://mitpress.mit.edu/sicp/full-text/book/book.html">Structure and Interpretation of Computer Programs</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Newton&#39;s_method">Newton method</a></li>
+</ol>]]></content>
+  </entry>
+  
+</feed>
