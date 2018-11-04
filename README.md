@@ -1,126 +1,152 @@
-# Space Jekyll
+# Simple Texture Jekyll Theme
 
-A simple and elegant Jekyll theme based on Spacemacs. The theme works well on mobile devices as well.
+![Gem Version](https://img.shields.io/gem/v/jekyll-theme-simple-texture.svg)
 
-See a live demo [here](https://victorvoid.github.io/space-jekyll-template/).
+Simple Texture is a gem-based responsive simple texture styled Jekyll theme for [Jekyll][Jekyll] 3.3 or above,
+which can also be forked as a boilerplate for older versions of Jekyll.
 
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/screenshot.png?raw=true)
+## Demo
 
-# Site/User Settings
+- Starter-kit demo:
+<https://yizeng.github.io/jekyll-theme-simple-texture/>
+- My own personal blog: <https://yizeng.me/blog>
 
-customize your site in ``_config.yml``
+![Screenshot - Home](assets/images/screenshots/home.png)
 
-```ruby
+![Screenshot - Blog](assets/images/screenshots/post.png)
 
-# Site settings
-description: A blog about lorem ipsum
-baseurl: "" # the subpath
-url: "" # the base hostname &/|| protocol for your site
+## Installation
 
-# User settings
-username: Lorem Ipsum
-user_description: Lorem Developer
-user_title: Lorem Ipsum
-email: lorem@ipsum.com
-twitter_username: loremipsum
-github_username:  loremipsum
-gplus_username:  loremipsum
-disqus_username: loremipsum
+### As a Jekyll theme gem (Jekyll >= 3.3)
 
-```
+If you are creating a new website or blog,
+please follow the commands below first:
 
-See more about project and links in [_config.yml](./_config.yml)
+1. Install Jekyll and [Bundler][Bundler]
 
-## How to create a post ?
+       gem install jekyll bundler
 
-_posts create a file .md with structure:
+2. Create a new Jekyll app
 
-```md
----
-layout: post
-title: "Lorem ipsum speak.."
-date: 2016-09-13 01:00:00
-image: '/assets/img/post-image.png'
-description: 'about tech'
-tags:
-- lorem
-- tech
-categories:
-- Lorem ipsum
-twitter_text: 'How to speak with Lorem'
----
-```
+       jekyll new jekyllapp
 
-## How to insert new links on menu navigation ?
+3. Enter the new directory
 
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/src/img/menu.png)
+       cd jekyllapp
 
-You should open `_config.yml` and change/add `links` section:
+4. Then follow the instructions below like existing Jekyll app.
 
-```yaml
-links:
-  section_1: # you can use any name
-    - title: home # show on menu
-      url: / #link
-      key_trigger: 1 # link shortcut and show on the left of the title
-    - title: my posts
-      url: /posts
-      key_trigger: 2
-    - title: series
-      url: /series
-      key_trigger: 3
-    - title: tags
-      url: /tags
-      key_trigger: 4
-    - title: about me
-      url: /about
-      key_trigger: 5
-```
+Then for existing Jekyll apps,
 
-Frontend Technologies
----------------------
-* [Gulp](https://gulpjs.com/): The streaming build system.
-* [Stylus](http://stylus-lang.com/): expressive, dynamic, robust CSS.
-* [BrowserSync](https://www.browsersync.io/): Time-saving synchronised browser testing.
-* [Rupture](https://github.com/jescalan/rupture): Simple media queries for stylus.
-* [Kouto-Swiss](http://kouto-swiss.io/): A complete CSS framework for Stylus.
-* [Jeet](http://jeet.gs/): A grid system for human.
-* [Zepto.js](http://zeptojs.com/): The aerogel-weight jQuery-compatible JavaScript library.
+1. Install Bundler if haven't done so.
 
-## How can I modify the theme ?
+       gem install bundler
 
-First, install [jekyll](https://jekyllrb.com/) and [node.js](https://nodejs.org/).
+1. Remove Jekyll auto-generated default pages `404.html`, `about.md` and `index.md` or any your custom layouts or existing theme files.
 
-1. Fork the theme with your username, example: `charlie.github.io`
-2. Clone repository to your computer
-3. run `npm install`
-4. run `gulp`
-5. Be happy by modifying the files
+1. Remove the existing `Gemfile.lock`.
 
-**Space Jekyll** uses the [Stylus](http://stylus-lang.com/) to process his css, then modifies the style of the theme in [this folder](https://github.com/victorvoid/space-jekyll-template/tree/master/src/styl).
+1. Download the respository [here](https://github.com/yizeng/jekyll-theme-simple-texture/archive/master.zip)
+and locate `starter-kit` folder,
+or download `starter-kit` folder directly [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/yizeng/jekyll-theme-simple-texture/tree/master/starter-kit).
 
-You can go in the [variable.styl](https://github.com/victorvoid/space-jekyll-template/blob/master/src/styl/_variables.styl) and modify the colors. 
+1. Put everything in the `starter-kit` in the root directory,
+i.e. `jekyllapp` in this example.
 
+1. Run `bundle install` to install dependencies.
+
+1. Run Jekyll with `bundle exec jekyll serve`
+
+1. Hack away at <http://localhost:4000>!
+
+### As a fork
+
+1. Fork the repo [here](https://github.com/yizeng/jekyll-theme-simple-texture#fork-destination-box)
+
+2. Clone the repo just forked.
+
+       git clone git@github.com:[YOUR_USERNAME]/jekyll-theme-simple-texture.git
+
+3. Delete `starter-kit` folder and `jekyll-theme-simple-texture.gemspec` file (they're for people installing via gem)
+
+4. Install Bundler if haven't done so.
+
+       gem install bundler
+
+5. Update the `Gemfile` to look like the following:
+
+   ```ruby
+   source "https://rubygems.org"
+
+   gem "github-pages", group: :jekyll_plugins
+   ```
+
+6. Run `bundle install` to install dependencies.
+
+7. Run Jekyll with `bundle exec jekyll serve`
+
+8. Hack away at <http://localhost:4000>!
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at <https://github.com/yizeng/jekyll-theme-simple-texture>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Credits
+
+- [Jekyll][Jekyll]
+  + [jekyll-feed](https://github.com/jekyll/jekyll-feed)
+  + [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from)
+  + [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
+  + [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
+  + [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
+  + [Jekyll-Bootstrap](http://jekyllbootstrap.com/)
+  + [theme-the-program](https://github.com/jekyllbootstrap/theme-the-program)
+
+- [Sass](http://sass-lang.com/)
+  + [Normalize.css](https://necolas.github.io/normalize.css/)
+  + [Animate.css](https://daneden.github.io/animate.css/)
+  + [Simple Icons](https://simpleicons.org/)
+  + [Noise Texture Generator](http://www.noisetexturegenerator.com/)
+- JavaScript
+  + [cdnjs](https://cdnjs.com/)
+  + [jQuery](https://jquery.com/)
+  + [fullPage.js](https://alvarotrigo.com/fullPage/)
+  + [pace.js](http://github.hubspot.com/pace/docs/welcome/)
+  + [Modernizr](https://modernizr.com/)
+  + [FancyBox](http://fancybox.net/)
+  + [unveil.js](http://luis-almeida.github.io/unveil/)
+- Fonts
+  + [Font Squirrel](https://www.fontsquirrel.com/)
+  + [Bitter](https://fonts.google.com/specimen/Bitter)
+  + [Junge](https://fonts.google.com/specimen/Junge)
+  + [Ubuntu Condensed](https://fonts.google.com/specimen/Ubuntu+Condensed)
 
 ## License
-The MIT License (MIT)
 
-Copyright (c) 2016 Victor Igor
+The theme is available as open source under the terms of the
+[MIT License](https://github.com/yizeng/jekyll-theme-simple-texture/blob/master/LICENSE).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+    MIT License
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+    Copyright (c) 2017 Yi Zeng
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+[Jekyll]: http://jekyllrb.com/
+[Bundler]: https://bundler.io/
