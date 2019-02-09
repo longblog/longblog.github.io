@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Privacy Policy"
-description: "Tabata Timer privacy"
+title: "Tabata Timer Privacy Policy"
+description: "Tabata Timer Privacy Policy"
 categories: [uncategorized]
 tags: [privacy]
 redirect_from:
