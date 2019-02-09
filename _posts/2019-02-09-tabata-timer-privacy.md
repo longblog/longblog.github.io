@@ -6,7 +6,6 @@ categories: [uncategorized]
 tags: [privacy]
 redirect_from:
   - /2019/02/09/
-
 ---
 
 GLASSES built the Tabata Timer app as an Ad Supported app. This SERVICE is provided by GLASSES at no cost and is intended for use as is.
